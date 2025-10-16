@@ -1,70 +1,112 @@
-/* General styles */
+/* General */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     margin: 0;
-    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #1c1c1c;
 }
 
-/* Header */
-header {
+/* Hero Section */
+.hero {
+    background-image: url('minecraft-bg.jpg'); /* Add a cool Minecraft image */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px #000;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 6px #000;
+}
+
+.edition-buttons button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin: 0 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
     background-color: #4CAF50;
     color: white;
+    transition: 0.3s;
+}
+
+.edition-buttons button:hover {
+    background-color: #45a049;
+}
+
+/* Categories Section */
+.categories {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
+    background-color: #222;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+.hidden {
+    display: none;
 }
 
-header p {
-    font-size: 1.2rem;
+.category-buttons button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #3e8e41;
+    transition: 0.3s;
 }
 
-/* Main content */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2rem 1rem;
-    gap: 2rem;
+.category-buttons button:hover {
+    background-color: #36b03c;
 }
 
-.pack {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    width: 300px;
-    text-align: center;
+/* Packs display */
+.pack-card {
+    background-color: #333;
     padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 10px;
+    max-width: 800px;
+    text-align: center;
 }
 
-.pack img {
-    width: 100%;
+.pack-card img.thumbnail {
+    width: 200px;
     border-radius: 10px;
 }
 
-.download {
+.pack-card .preview-images img {
+    width: 100px;
+    margin: 0.3rem;
+    border-radius: 5px;
+}
+
+.download-btn {
     display: inline-block;
-    margin-top: 1rem;
     padding: 0.5rem 1rem;
+    margin-top: 1rem;
     background-color: #4CAF50;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
-.download:hover {
-    background-color: #45a049;
+.download-btn:hover {
+    background-color: #36b03c;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #333;
-    color: white;
+    background-color: #111;
 }
