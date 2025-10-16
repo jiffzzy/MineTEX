@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minetex - Minecraft Texture Packs</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minetex - Minecraft Texture Packs</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
- <header class="hero">
+
+<!-- Hero Section -->
+<header class="hero">
     <h1>Minetex</h1>
     <p>Your ultimate Minecraft texture pack hub!</p>
     <div class="edition-buttons">
@@ -16,6 +18,7 @@
     </div>
 </header>
 
+<!-- Categories & Packs -->
 <main>
     <div id="categories" class="hidden">
         <h2 id="edition-title"></h2>
@@ -31,63 +34,12 @@
     </div>
 </main>
 
+<footer>
+    <p>Made with ❤️ for Minecraft fans. Hosted on GitHub Pages.</p>
+</footer>
 
-    <footer>
-        <p>Made with ❤️ for Minecraft fans. Hosted on GitHub Pages.</p>
-    </footer>
-    <script>
-// Show categories when edition button is clicked
+<script>
+// Show categories after clicking edition
 function showCategories(edition) {
-    document.getElementById('categories').classList.remove('hidden');
-    document.getElementById('edition-title').innerText = edition.charAt(0).toUpperCase() + edition.slice(1) + ' Edition Packs';
-}
+    const categories
 
-// Example packs data (later can move to JSON files)
-const packs = {
-    bedrock: {
-        pvp: [
-            {
-                name: "Bedrock PvP Pack",
-                thumbnail: "packs/bedrock/pvp/thumbnail.png",
-                images: ["packs/bedrock/pvp/img1.png","packs/bedrock/pvp/img2.png","packs/bedrock/pvp/img3.png","packs/bedrock/pvp/img4.png","packs/bedrock/pvp/img5.png"],
-                description: "A great PvP pack for Bedrock players.",
-                versions: ["1.21", "1.20"],
-                download: "packs/bedrock/pvp/pack.zip"
-            }
-        ]
-    },
-    java: {
-        shader: [],
-        survival: [],
-        utility: [],
-        others: []
-    }
-};
-
-// Show packs for selected category
-function showPacks(category) {
-    const edition = document.getElementById('edition-title').innerText.split(' ')[0].toLowerCase();
-    const display = document.getElementById('packs-display');
-    display.innerHTML = ""; // Clear previous packs
-    const selectedPacks = packs[edition][category] || [];
-    
-    selectedPacks.forEach(pack => {
-        const packDiv = document.createElement('div');
-        packDiv.className = 'pack-card';
-        packDiv.innerHTML = `
-            <img class="thumbnail" src="${pack.thumbnail}" alt="${pack.name}">
-            <h3>${pack.name}</h3>
-            <p>${pack.description}</p>
-            <p>Supported Versions: ${pack.versions.join(', ')}</p>
-            <div class="preview-images">
-                ${pack.images.map(img => `<img src="${img}" alt="Preview">`).join('')}
-            </div>
-            <a href="${pack.download}" class="download-btn">Download</a>
-        `;
-        display.appendChild(packDiv);
-    });
-}
-</script>
-
-</body>
-</html>
